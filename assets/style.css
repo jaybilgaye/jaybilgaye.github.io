@@ -379,6 +379,12 @@ a:focus-visible {
 }
 
 /* ===== About ===== */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
 .intro {
   font-size: 1.05rem;
   color: var(--text-secondary);
@@ -387,6 +393,54 @@ a:focus-visible {
 }
 
 .intro strong {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.about-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  transition: all 0.25s ease;
+}
+
+.about-highlight:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.about-highlight svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.about-highlight strong {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.about-closing {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.about-closing strong {
   font-weight: 700;
   color: var(--text);
 }
