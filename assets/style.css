@@ -628,6 +628,61 @@ a:focus-visible {
   line-height: 1.55;
 }
 
+/* ===== Certifications ===== */
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+  border-radius: 12px;
+  transition: all 0.25s ease;
+}
+
+.cert-item:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.cert-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  height: 30px;
+  padding: 0 0.5rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.cert-item:hover .cert-badge {
+  background: var(--accent);
+  color: #fff;
+}
+
+.cert-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.cert-item:hover .cert-name {
+  color: var(--text);
+}
+
 /* ===== CTA Card ===== */
 .cta-card {
   background: linear-gradient(135deg, #3b82f6, #10b981);
