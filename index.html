@@ -1,461 +1,169 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Jayprakash Bilgaye — Big data & platform engineering. Kafka, ClickHouse, Hadoop, Kubernetes, production operations." />
+  <meta name="description" content="Jayprakash Bilgaye — Senior Cloud / DevOps Engineer in Melbourne. AWS, Terraform, Kubernetes, EMR, Kafka, ClickHouse; cloud security & compliance. Builder of KafkaGuard and APRA compliance tooling for AWS." />
   <meta name="author" content="Jayprakash Bilgaye" />
-  <meta property="og:title" content="Jayprakash Bilgaye" />
-  <meta property="og:description" content="Senior Solution Specialist · Big data & platform engineering · Pune, India" />
+  <meta name="theme-color" content="#0b0d0b" />
+  <meta property="og:title" content="Jayprakash Bilgaye — Senior Cloud / DevOps Engineer" />
+  <meta property="og:description" content="AWS · Kubernetes · Terraform · Kafka · ClickHouse · cloud security & compliance. 15+ years building and securing distributed platforms. Melbourne, Australia." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0f172a" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%233b82f6'/><text x='50' y='68' font-size='50' font-family='system-ui' font-weight='bold' fill='white' text-anchor='middle'>JB</text></svg>" />
-  <title>Jayprakash Bilgaye</title>
+  <meta property="og:url" content="https://jaybilgaye.github.io" />
+  <meta property="og:image" content="https://jaybilgaye.github.io/assets/profile.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Jayprakash Bilgaye — Senior Cloud / DevOps Engineer" />
+  <meta name="twitter:description" content="AWS · Kubernetes · Terraform · Kafka · ClickHouse · cloud security & compliance. Melbourne, Australia." />
+  <meta name="twitter:image" content="https://jaybilgaye.github.io/assets/profile.png" />
+  <title>Jayprakash Bilgaye — Senior Cloud / DevOps Engineer</title>
+  <!-- set theme before paint to avoid flash -->
+  <script>(function(){try{var m=localStorage.getItem("jb-theme");if(m&&m!=="auto")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jayprakash Bilgaye",
+    "jobTitle": "Senior Cloud / DevOps Engineer",
+    "email": "mailto:jaybilgaye@gmail.com",
+    "image": "https://jaybilgaye.github.io/assets/profile.png",
+    "url": "https://jaybilgaye.github.io",
+    "address": { "@type": "PostalAddress", "addressLocality": "Melbourne", "addressCountry": "AU" },
+    "sameAs": [
+      "https://github.com/jaybilgaye",
+      "https://www.linkedin.com/in/jay-bilgaye/",
+      "https://medium.com/@jayprakash.bilgaye",
+      "https://x.com/jaybilgaye",
+      "https://www.youtube.com/@jaybilgaye",
+      "https://aiopsone.com"
+    ],
+    "knowsAbout": ["AWS","Terraform","Kubernetes","Apache Kafka","ClickHouse","Apache Spark","Cloud security","Observability"]
+  }
+  </script>
 </head>
 <body>
-  <!-- Theme toggle -->
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-    </svg>
-    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-    </svg>
-  </button>
+  <button class="theme" id="themeBtn" type="button" aria-label="Toggle colour theme">🌓 Auto</button>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <canvas id="particles"></canvas>
-    </div>
-    <div class="hero-content">
-      <div class="avatar" aria-hidden="true">
-        <span>JB</span>
-      </div>
-      <h1 class="reveal">Jayprakash Bilgaye</h1>
-      <p class="tagline reveal">Senior Solution Specialist</p>
-      <p class="subtitle reveal">Big Data & Platform Engineering</p>
-      <p class="location reveal">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Pune, India
-      </p>
-      <div class="actions reveal">
-        <a class="btn btn-primary" href="mailto:jaybilgaye@gmail.com">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email
-        </a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/jay-bilgaye/" target="_blank" rel="noopener noreferrer">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a class="btn btn-ghost" href="https://github.com/jaybilgaye" target="_blank" rel="noopener noreferrer">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-      </div>
-    </div>
-  </header>
+  <div class="band"><div class="band-in"></div></div>
 
-  <main class="wrap">
-    <!-- Stats -->
-    <section class="stats reveal" aria-label="Key numbers">
-      <div class="stat">
-        <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
-        <span class="stat-label">Years Experience</span>
+  <div class="shell">
+    <aside class="side">
+      <img class="photo" src="assets/profile.png" width="160" height="160" alt="Jayprakash Bilgaye" />
+      <h1>Jayprakash Bilgaye</h1>
+      <p class="tag">Senior <b>Cloud / DevOps</b> Engineer</p>
+      <p class="loc"><span class="ldot" aria-hidden="true"></span>Melbourne, Australia</p>
+      <div class="actions">
+        <a class="btn p" href="mailto:jaybilgaye@gmail.com">Get in touch</a>
+        <a class="btn g" href="https://www.linkedin.com/in/jay-bilgaye/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn g" href="https://github.com/jaybilgaye" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
-      <div class="stat">
-        <span class="stat-number" data-target="4">0</span>
-        <span class="stat-label">Companies</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number" data-target="7">0</span><span class="stat-plus">+</span>
-        <span class="stat-label">Technologies</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
-        <span class="stat-label">Cloud Platforms</span>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="card reveal" aria-labelledby="about-heading">
-      <h2 id="about-heading">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        About
-      </h2>
-      <div class="about-content">
-        <p class="intro">
-          I build and run <strong>distributed data platforms</strong> in production — Kafka, ClickHouse, Hadoop-family stacks, and the observability around them (Prometheus, Grafana). Over <strong>15+ years</strong> I've worked across greenfield builds, upgrades, migrations, and steady-state operations: cluster scaling, incident response, security hardening (TLS, LDAP, Kerberos, Ranger), and automation (Terraform, Ansible, GitOps tooling).
-        </p>
-
-        <div class="about-highlights">
-          <div class="about-highlight">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>Currently focused on <strong>open-source big data platforms</strong> in enterprise environments — Kafka operations, ClickHouse deployments &amp; remediation, Iceberg-related capabilities, and platform upgrades with minimal disruption to data teams.</span>
-          </div>
-          <div class="about-highlight">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>Earlier roles span <strong>large multi-environment Hadoop estates (~300 nodes)</strong>, Kubernetes on Azure/GCP, AKS/Terraform, and CDH/Hortonworks-era hardening — from Cognizant through Persistent, Clairvoyant, and my current engagement.</span>
-          </div>
-          <div class="about-highlight">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span><strong>Cloud &amp; analytics</strong> — hands-on with GCP BigQuery for large-scale analytics workloads, Azure cloud operations, container orchestration, and infrastructure-as-code with Terraform for reproducible, cost-optimized deployments.</span>
-          </div>
-          <div class="about-highlight">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span><strong>Observability &amp; reliability</strong> — Prometheus, Grafana, and custom alerting pipelines for proactive monitoring. Building the automation and runbooks that keep platforms safe to change at scale.</span>
-          </div>
-          <div class="about-highlight">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>Contribute to the tech community through <strong>educational content on Udemy and Medium</strong>, focusing on DevOps best practices, Kubernetes, ClickHouse, and emerging data technologies.</span>
-          </div>
-        </div>
-
-        <p class="about-closing">
-          Open to relevant <strong>platform / SRE / big data engineering</strong> conversations.
-        </p>
-      </div>
-    </section>
-
-    <!-- Focus Areas -->
-    <section class="card reveal" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        Focus Areas
-      </h2>
+      <h3>Focus areas</h3>
       <div class="pills" role="list">
-        <span role="listitem">Kafka</span>
-        <span role="listitem">ClickHouse</span>
-        <span role="listitem">Hadoop / Iceberg</span>
-        <span role="listitem">Kubernetes</span>
-        <span role="listitem">Azure / Cloud Ops</span>
-        <span role="listitem">GCP / BigQuery</span>
-        <span role="listitem">Prometheus / Grafana</span>
-        <span role="listitem">Terraform / Ansible</span>
-        <span role="listitem">Platform Reliability</span>
-        <span role="listitem">NiFi</span>
-        <span role="listitem">GitOps</span>
+        <span role="listitem">AWS</span><span role="listitem">Terraform</span><span role="listitem">Kubernetes / EKS</span><span role="listitem">EMR / Spark</span><span role="listitem">Kafka</span><span role="listitem">ClickHouse</span><span role="listitem">GitHub Actions</span><span role="listitem">Observability</span><span role="listitem">Cloud security &amp; compliance</span>
       </div>
-    </section>
-
-    <!-- Writing -->
-    <section class="card reveal" aria-labelledby="writing-heading">
-      <h2 id="writing-heading">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-        Writing & Courses
-      </h2>
-      <div class="card-list">
-        <a href="https://medium.com/@jayprakash.bilgaye/introduction-to-clickhouse-the-fast-and-scalable-columnar-database-4f2ec3e476a6" target="_blank" rel="noopener noreferrer">
-          <div class="card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-          </div>
-          <div class="card-info">
-            <span class="t">Introduction to ClickHouse</span>
-            <span class="d">Columnar OLAP database overview</span>
-          </div>
-          <svg class="ext" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-        <a href="https://medium.com/@jayprakash.bilgaye/getting-started-with-clickhouse-on-docker-quick-and-easy-guide-for-mac-users-e69dcc138c6e" target="_blank" rel="noopener noreferrer">
-          <div class="card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10h10M7 14h6"/></svg>
-          </div>
-          <div class="card-info">
-            <span class="t">ClickHouse on Docker (Mac)</span>
-            <span class="d">Quick setup walkthrough</span>
-          </div>
-          <svg class="ext" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-        <a href="https://medium.com/@jayprakash.bilgaye/azure-kubernetes-service-cluster-in-10-minutes-7701c655d1df" target="_blank" rel="noopener noreferrer">
-          <div class="card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
-          </div>
-          <div class="card-info">
-            <span class="t">Azure Kubernetes Service in 10 minutes</span>
-            <span class="d">AKS getting started</span>
-          </div>
-          <svg class="ext" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-        <a href="https://medium.com/@jayprakash.bilgaye" target="_blank" rel="noopener noreferrer">
-          <div class="card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </div>
-          <div class="card-info">
-            <span class="t">More on Medium</span>
-            <span class="d">@jayprakash.bilgaye &middot; tutorials & notes</span>
-          </div>
-          <svg class="ext" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-        <a href="https://www.udemy.com/user/jay-bilgaye" target="_blank" rel="noopener noreferrer">
-          <div class="card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </div>
-          <div class="card-info">
-            <span class="t">Courses on Udemy</span>
-            <span class="d">DevOps best practices & emerging technologies</span>
-          </div>
-          <svg class="ext" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section class="card reveal" aria-labelledby="exp-heading">
-      <h2 id="exp-heading">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-        Experience
-      </h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2022 – Present</span>
-            <h3>Senior Solution Specialist</h3>
-            <span class="timeline-company">Telstra (client)</span>
-            <p>Production Kafka, ClickHouse, Hadoop platforms; observability & upgrades.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2017 – 2022</span>
-            <h3>Senior Engineer, Cloud & Ops</h3>
-            <span class="timeline-company">Clairvoyant</span>
-            <p>Large-scale Hadoop, Kubernetes on Azure/GCP, Terraform, monitoring.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2014 – 2017</span>
-            <h3>Module Lead, DevOps / Hadoop</h3>
-            <span class="timeline-company">Persistent Systems</span>
-            <p>CDH, security (LDAP, TLS), NiFi, platform standards.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2010 – 2014</span>
-            <h3>Programmer Analyst</h3>
-            <span class="timeline-company">Cognizant</span>
-            <p>Hadoop operations & delivery support.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certifications -->
-    <section class="card reveal" aria-labelledby="certs-heading">
-      <h2 id="certs-heading">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-        Certifications
-      </h2>
-      <div class="cert-list">
-        <div class="cert-item">
-          <span class="cert-badge">CKA</span>
-          <span class="cert-name">Certified Kubernetes Administrator</span>
-        </div>
-        <div class="cert-item">
-          <span class="cert-badge">AZ-104</span>
-          <span class="cert-name">Microsoft Certified: Azure Administrator Associate</span>
-        </div>
-        <div class="cert-item">
-          <span class="cert-badge">HDPCA</span>
-          <span class="cert-name">Hortonworks Certified Apache Hadoop Administrator</span>
-        </div>
-        <div class="cert-item">
-          <span class="cert-badge">CCAH</span>
-          <span class="cert-name">Cloudera Certified Hadoop Administrator</span>
-        </div>
-        <div class="cert-item">
-          <span class="cert-badge">RHCE</span>
-          <span class="cert-name">Red Hat Certified Engineer</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact CTA -->
-    <section class="cta-card reveal">
-      <h2>Let's Connect</h2>
-      <p>Interested in big data platforms, distributed systems, or just want to say hi?</p>
-      <div class="cta-actions">
-        <a class="btn btn-cta" href="mailto:jaybilgaye@gmail.com">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Send me an email
-        </a>
-        <a class="btn btn-cta-outline" href="https://www.linkedin.com/in/jay-bilgaye/" target="_blank" rel="noopener noreferrer">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          Connect on LinkedIn
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <!-- Back to top -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <nav class="social" aria-label="Profiles">
-        <a href="https://github.com/jaybilgaye" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/jay-bilgaye/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://medium.com/@jayprakash.bilgaye" target="_blank" rel="noopener noreferrer" aria-label="Medium">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-        </a>
-        <a href="https://medium.com/cloudscoop" target="_blank" rel="noopener noreferrer" aria-label="CloudScoop">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
-        </a>
+      <h3>Elsewhere</h3>
+      <nav class="sidesocial" aria-label="Profiles">
+        <a href="https://github.com/jaybilgaye" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/jay-bilgaye/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://medium.com/@jayprakash.bilgaye" target="_blank" rel="noopener noreferrer">Medium</a>
+        <a href="https://aiopsone.com" target="_blank" rel="noopener noreferrer">aiopsone.com</a>
+        <a href="https://x.com/jaybilgaye" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://www.youtube.com/@jaybilgaye" target="_blank" rel="noopener noreferrer">YouTube</a>
       </nav>
-      <div class="footer-links">
-        <a href="mailto:jaybilgaye@gmail.com">jaybilgaye@gmail.com</a>
+    </aside>
+
+    <main class="main">
+      <div class="stats">
+        <div class="stat"><div class="n">15+</div><div class="l">Years in production</div></div>
+        <div class="stat"><div class="n">7</div><div class="l">Cloud / platform certs</div></div>
+        <div class="stat"><div class="n">3</div><div class="l">Products shipped</div></div>
+        <div class="stat"><div class="n">120-node</div><div class="l">Clusters operated</div></div>
       </div>
-      <p class="copyright">&copy; <span id="y"></span> Jayprakash Bilgaye. All rights reserved.</p>
-    </div>
-  </footer>
+
+      <section aria-labelledby="about-h">
+        <h2 id="about-h">About</h2>
+        <p class="intro">Senior Cloud / DevOps Engineer with <strong>15+ years</strong> building, automating, and securing distributed platforms in regulated enterprise environments. I <strong>re-platform on-prem Hadoop/Spark onto serverless AWS</strong>, stand up production Kubernetes with zero-downtime deploys, and ship infrastructure as code in Terraform through GitHub Actions. Deep operational roots — 120-node Hadoop clusters, hardened Kafka &amp; ClickHouse — now applied as <strong>least-privilege cloud IAM and Kubernetes RBAC</strong>.</p>
+      </section>
+
+      <section aria-labelledby="products-h">
+        <h2 id="products-h">Products &amp; Open Source</h2>
+        <div class="prod">
+          <a class="pc full" href="https://github.com/jaybilgaye/cps234-aws-config-pack" target="_blank" rel="noopener noreferrer">
+            <div class="ph"><span class="nm">APRA Compliance Tooling for AWS</span><span class="arrow" aria-hidden="true">↗</span><span class="badge">Open source</span></div>
+            <p class="pd">CPS 234 / CPS 230 conformance pack for AWS Config — 46 managed rules mapped paragraph-by-paragraph, replacing AWS's ~4-year-stale pack — plus Cloud Custodian + Prowler policy-as-code and a Bedrock "compliance narrator" turning findings into audit-ready reports.</p>
+            <div class="meta"><b>46</b> Config rules · CPS 234 / 230 · Cyber Security Act 2024 · Cloud Custodian · Prowler · Bedrock</div>
+          </a>
+          <a class="pc" href="https://kafkaguard.com" target="_blank" rel="noopener noreferrer">
+            <div class="ph"><span class="nm">KafkaGuard</span><span class="arrow" aria-hidden="true">↗</span></div>
+            <p class="pd">Kafka security &amp; compliance scanner that audits cluster configs against ~55 controls.</p>
+            <div class="meta"><b>~55</b> controls · PCI-DSS · SOC 2 · ISO 27001</div>
+          </a>
+          <a class="pc" href="https://clustersight.io" target="_blank" rel="noopener noreferrer">
+            <div class="ph"><span class="nm">ClusterSight.io</span><span class="arrow" aria-hidden="true">↗</span></div>
+            <p class="pd">ClickHouse monitoring &amp; observability SaaS, built end-to-end.</p>
+            <div class="meta">React · Python · Docker · Prometheus</div>
+          </a>
+        </div>
+      </section>
+
+      <section aria-labelledby="exp-h">
+        <h2 id="exp-h">Experience</h2>
+        <ul class="exp">
+          <li><span class="yr">2022 — now</span><div><span class="role">Senior Cloud / DevOps Engineer</span><span class="co">Telstra (client) · Melbourne</span><div class="desc">Re-platformed Hadoop/Spark ETL onto AWS EMR &amp; EMR Serverless (S3 lake, Athena/Glue/QuickSight); built production EKS with IRSA + dual IAM/RBAC and zero-downtime rollouts; Terraform + GitHub Actions IaC; hardened Kafka &amp; ClickHouse.</div></div></li>
+          <li><span class="yr">2017 — 2022</span><div><span class="role">Senior Engineer, Cloud &amp; Ops</span><span class="co">Clairvoyant · Pune</span><div class="desc">Led big-data admin across Cloudera &amp; Hortonworks (~300 nodes); AKS via Terraform; CIS benchmarking; Prometheus/Grafana observability.</div></div></li>
+          <li><span class="yr">2014 — 2017</span><div><span class="role">Module Lead, DevOps / Hadoop</span><span class="co">Persistent Systems · Pune</span><div class="desc">TLS/SSL + LDAP for Hadoop services; greenfield provisioning through CDH upgrades; NiFi.</div></div></li>
+          <li><span class="yr">2010 — 2014</span><div><span class="role">Programmer Analyst</span><span class="co">Cognizant · Pune</span><div class="desc">Multi-node Hadoop cluster install, config, and operational support across distributions.</div></div></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="certs-h">
+        <h2 id="certs-h">Certifications</h2>
+        <div class="certs">
+          <div class="cert"><span class="d" style="background:#f59e0b" aria-hidden="true"></span>AWS Certified Security – Specialty</div>
+          <div class="cert"><span class="d" style="background:#f59e0b" aria-hidden="true"></span>AWS Certified Solutions Architect – Associate</div>
+          <div class="cert"><span class="d" style="background:#3b82f6" aria-hidden="true"></span>Certified Kubernetes Administrator (CKA)</div>
+          <div class="cert"><span class="d" style="background:#0ea5e9" aria-hidden="true"></span>Microsoft Certified: Azure Administrator (AZ-104)</div>
+          <div class="cert"><span class="d" style="background:#22d3ee" aria-hidden="true"></span>Cloudera Certified Hadoop Administrator (CCAH)</div>
+          <div class="cert"><span class="d" style="background:#22d3ee" aria-hidden="true"></span>Hortonworks Certified Hadoop Administrator (HDPCA)</div>
+          <div class="cert"><span class="d" style="background:#ef4444" aria-hidden="true"></span>Red Hat Certified Engineer (RHCE)</div>
+        </div>
+      </section>
+
+      <section aria-labelledby="writing-h">
+        <h2 id="writing-h">Writing &amp; Publications</h2>
+        <a class="course" href="https://market.tutorialspoint.com/course/azure-kubernetes-service/index.asp" target="_blank" rel="noopener noreferrer">
+          <span class="ic" aria-hidden="true">🎓</span>
+          <div><div class="ct">Azure Kubernetes Service: A Beginner's Guide</div><div class="cd">Authored course on Tutorialspoint</div></div>
+          <span class="badge">Course</span>
+        </a>
+        <div class="wlist">
+          <a href="https://aiopsone.com" target="_blank" rel="noopener noreferrer"><div><span class="t">aiopsone.com</span><span class="wd">AWS, cloud &amp; platform engineering writing</span></div><span class="ext" aria-hidden="true">↗</span></a>
+          <a href="https://medium.com/@jayprakash.bilgaye/introduction-to-clickhouse-the-fast-and-scalable-columnar-database-4f2ec3e476a6" target="_blank" rel="noopener noreferrer"><div><span class="t">Introduction to ClickHouse</span><span class="wd">Columnar OLAP database overview</span></div><span class="ext" aria-hidden="true">↗</span></a>
+          <a href="https://medium.com/@jayprakash.bilgaye/azure-kubernetes-service-cluster-in-10-minutes-7701c655d1df" target="_blank" rel="noopener noreferrer"><div><span class="t">Azure Kubernetes Service in 10 minutes</span><span class="wd">AKS getting started</span></div><span class="ext" aria-hidden="true">↗</span></a>
+          <a href="https://medium.com/@jayprakash.bilgaye" target="_blank" rel="noopener noreferrer"><div><span class="t">More on Medium</span><span class="wd">@jayprakash.bilgaye</span></div><span class="ext" aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <footer>© <span id="y"></span> Jayprakash Bilgaye · Melbourne, Australia · also writing at <a href="https://medium.com/cloudscoop" target="_blank" rel="noopener noreferrer">medium.com/cloudscoop</a></footer>
+    </main>
+  </div>
 
   <script>
-    // Dynamic year
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    // Theme toggle
-    const toggle = document.getElementById("themeToggle");
-    const root = document.documentElement;
-    const stored = localStorage.getItem("theme");
-    if (stored) {
-      root.setAttribute("data-theme", stored);
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      root.setAttribute("data-theme", "dark");
-    }
-    toggle.addEventListener("click", () => {
-      const current = root.getAttribute("data-theme");
-      const next = current === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
-    });
-
-    // Scroll reveal
-    const reveals = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
+    (function () {
+      var KEY = "jb-theme", root = document.documentElement, btn = document.getElementById("themeBtn");
+      var labels = { auto: "🌓 Auto", light: "☀️ Light", dark: "🌙 Dark" };
+      function apply(m) { if (m === "auto") { root.removeAttribute("data-theme"); } else { root.setAttribute("data-theme", m); } btn.textContent = labels[m]; }
+      var mode = localStorage.getItem(KEY) || "auto";
+      apply(mode);
+      btn.addEventListener("click", function () {
+        mode = mode === "auto" ? "light" : mode === "light" ? "dark" : "auto";
+        try { localStorage.setItem(KEY, mode); } catch (e) {}
+        apply(mode);
       });
-    }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
-    reveals.forEach((el) => observer.observe(el));
-
-    // Animated number counters
-    const counters = document.querySelectorAll(".stat-number");
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.getAttribute("data-target"), 10);
-          let current = 0;
-          const increment = target / 40;
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              el.textContent = target;
-              clearInterval(timer);
-            } else {
-              el.textContent = Math.ceil(current);
-            }
-          }, 30);
-          counterObserver.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
-    counters.forEach((el) => counterObserver.observe(el));
-
-    // Back to top button
-    const backBtn = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      backBtn.classList.toggle("show", window.scrollY > 400);
-    }, { passive: true });
-    backBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    // Particle background
-    (function() {
-      const canvas = document.getElementById("particles");
-      if (!canvas) return;
-      const ctx = canvas.getContext("2d");
-      let w, h, particles;
-      const particleCount = 50;
-
-      function resize() {
-        const hero = canvas.closest(".hero-bg");
-        w = canvas.width = hero.offsetWidth;
-        h = canvas.height = hero.offsetHeight;
-      }
-
-      function createParticles() {
-        particles = [];
-        for (let i = 0; i < particleCount; i++) {
-          particles.push({
-            x: Math.random() * w,
-            y: Math.random() * h,
-            r: Math.random() * 2 + 0.5,
-            dx: (Math.random() - 0.5) * 0.4,
-            dy: (Math.random() - 0.5) * 0.4,
-            opacity: Math.random() * 0.4 + 0.1
-          });
-        }
-      }
-
-      function draw() {
-        ctx.clearRect(0, 0, w, h);
-        particles.forEach((p) => {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(255,255,255," + p.opacity + ")";
-          ctx.fill();
-          p.x += p.dx;
-          p.y += p.dy;
-          if (p.x < 0 || p.x > w) p.dx *= -1;
-          if (p.y < 0 || p.y > h) p.dy *= -1;
-        });
-
-        // Draw connections
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 120) {
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = "rgba(255,255,255," + (0.06 * (1 - dist / 120)) + ")";
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
-            }
-          }
-        }
-        requestAnimationFrame(draw);
-      }
-
-      // Check reduced motion preference
-      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        resize();
-        createParticles();
-        draw();
-        window.addEventListener("resize", () => { resize(); createParticles(); });
-      }
+      document.getElementById("y").textContent = new Date().getFullYear();
     })();
   </script>
 </body>
