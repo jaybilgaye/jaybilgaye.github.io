@@ -614,13 +614,16 @@ footer a {
 }
 
 @media (max-width: 860px) {
+  .band-in {
+    padding-top: 4rem;
+  }
   .shell {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   .side {
     position: static;
-    margin-top: -80px;
+    margin-top: -46px;
   }
   .main {
     padding-top: 1.5rem;
